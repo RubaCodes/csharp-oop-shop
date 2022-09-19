@@ -1,4 +1,21 @@
-﻿public class Prodotto {
+﻿Prodotto primoProdotto = new Prodotto();
+
+primoProdotto.SetNome("smartphone");
+primoProdotto.SetDescrizione("L'ultimo incredile smartphone");
+primoProdotto.SetPrezzo(399);
+primoProdotto.SetIva(20);
+
+Console.WriteLine("---- Il tuo Prodotto----");
+Console.WriteLine(primoProdotto.GetCodice());
+Console.WriteLine(primoProdotto.GetNome());
+Console.WriteLine(primoProdotto.GetDescrizione());
+Console.WriteLine(primoProdotto.GetPrezzo());
+Console.WriteLine(primoProdotto.getPrezzoConIva());
+Console.WriteLine("---- Il Nome Prodotto esteso----");
+Console.WriteLine(primoProdotto.GetNomeEsteso());
+
+
+public class Prodotto {
     //attributi
     private int codice;
     private string nome;
@@ -42,5 +59,13 @@
     }
     public void SetIva(int iva) {
         this.iva = iva;
+    }
+
+    //metodi
+    public decimal getPrezzoConIva() {
+        return GetPrezzo() * (decimal) (getIva()+100)/100;
+    }
+    public string GetNomeEsteso() {
+        return GetCodice() + GetNome();
     }
 }
