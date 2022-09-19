@@ -1,4 +1,4 @@
-﻿Prodotto primoProdotto = new Prodotto();
+﻿Prodotto primoProdotto = new Prodotto(11111111);
 
 primoProdotto.SetNome("smartphone");
 primoProdotto.SetDescrizione("L'ultimo incredile smartphone");
@@ -13,6 +13,9 @@ Console.WriteLine(primoProdotto.GetPrezzo());
 Console.WriteLine(primoProdotto.getPrezzoConIva());
 Console.WriteLine("---- Il Nome Prodotto esteso----");
 Console.WriteLine(primoProdotto.GetNomeEsteso());
+//codice corretto con gli zeri
+Console.WriteLine("---- Codice corrento con pad left di n zeri----");
+Console.WriteLine(primoProdotto.CodiceConZero());
 
 
 public class Prodotto {
@@ -27,7 +30,11 @@ public class Prodotto {
     //random codice prodotto
     public Prodotto() {
         Random r = new Random();
-        this.codice = r.Next();
+        this.codice = r.Next(9999999);
+    }
+    public Prodotto(int codice) {
+
+        this.codice = codice;
     }
     //Getters
     //codice solo read
@@ -67,5 +74,14 @@ public class Prodotto {
     }
     public string GetNomeEsteso() {
         return GetCodice() + GetNome();
+    }
+
+    public string CodiceConZero() {
+        string codiceString = Convert.ToString(GetCodice());
+        int diff = 8 - codiceString.Length;
+        for (int i = 0; i < diff; i++) {
+                codiceString = "0" + codiceString;
+        }
+        return codiceString;
     }
 }
