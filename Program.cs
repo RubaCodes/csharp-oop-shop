@@ -1,4 +1,7 @@
-﻿Prodotto primoProdotto = new Prodotto(11111111);
+﻿//test funzionamento zeri
+//Prodotto primoProdotto = new Prodotto(2342);
+
+Prodotto primoProdotto = new Prodotto();
 
 primoProdotto.SetNome("smartphone");
 primoProdotto.SetDescrizione("L'ultimo incredile smartphone");
@@ -14,74 +17,74 @@ Console.WriteLine(primoProdotto.getPrezzoConIva());
 Console.WriteLine("---- Il Nome Prodotto esteso----");
 Console.WriteLine(primoProdotto.GetNomeEsteso());
 //codice corretto con gli zeri
-Console.WriteLine("---- Codice corrento con pad left di n zeri----");
+Console.WriteLine("---- Codice corretto con pad left di n zeri----");
 Console.WriteLine(primoProdotto.CodiceConZero());
 
 
 public class Prodotto {
-    //attributi
-    private int codice;
-    private string nome;
-    private string descrizione;
-    private decimal prezzo;
-    private int iva;
+	//attributi
+	private int codice;
+	private string nome;
+	private string descrizione;
+	private decimal prezzo;
+	private int iva;
 
-    //costruttori
-    //random codice prodotto
-    public Prodotto() {
-        Random r = new Random();
-        this.codice = r.Next(9999999);
-    }
-    public Prodotto(int codice) {
+	//costruttori
+	//random codice prodotto
+	public Prodotto() {
+		Random r = new Random();
+		this.codice = r.Next(9999999);
+	}
+	public Prodotto(int codice) {
 
-        this.codice = codice;
-    }
-    //Getters
-    //codice solo read
-    public int GetCodice() {
-        return this.codice;
-    }
-    public string GetNome() {
-        return this.nome;
-    }
-    public string GetDescrizione() {
-        return this.descrizione;
-    }
-    public decimal GetPrezzo() {
-        return this.prezzo;
-    }
-    public int getIva() {
-        return this.iva;
-    }
+		this.codice = codice;
+	}
+	//Getters
+	//codice solo read
+	public int GetCodice() {
+		return this.codice;
+	}
+	public string GetNome() {
+		return this.nome;
+	}
+	public string GetDescrizione() {
+		return this.descrizione;
+	}
+	public decimal GetPrezzo() {
+		return this.prezzo;
+	}
+	public int getIva() {
+		return this.iva;
+	}
 
-    //Setters
-    public void SetNome(string nome) {
-        this.nome = nome;
-    }
-    public void SetDescrizione(string descrizione) {
-        this.descrizione = descrizione;
-    }
-    public void SetPrezzo(decimal prezzo) {
-        this.prezzo = prezzo;
-    }
-    public void SetIva(int iva) {
-        this.iva = iva;
-    }
+	//Setters
+	public void SetNome(string nome) {
+		this.nome = nome;
+	}
+	public void SetDescrizione(string descrizione) {
+		this.descrizione = descrizione;
+	}
+	public void SetPrezzo(decimal prezzo) {
+		this.prezzo = prezzo;
+	}
+	public void SetIva(int iva) {
+		this.iva = iva;
+	}
 
-    //metodi
-    public decimal getPrezzoConIva() {
-        return GetPrezzo() * (decimal) (getIva()+100)/100;
-    }
-    public string GetNomeEsteso() {
-        return GetCodice() + GetNome();
-    }
+	//metodi
+	public decimal getPrezzoConIva() {
+		return GetPrezzo() * (decimal) (getIva()+100)/100;
+	}
+	public string GetNomeEsteso() {
+		return GetCodice() + GetNome();
+	}
 
-    public string CodiceConZero() {
-        string codiceString = Convert.ToString(GetCodice());
-        int diff = 8 - codiceString.Length;
-        for (int i = 0; i < diff; i++) {
-                codiceString = "0" + codiceString;
-        }
-        return codiceString;
-    }
+	public string CodiceConZero() {
+		string codiceString = Convert.ToString(GetCodice());
+		int diff = 8 - codiceString.Length;
+		for (int i = 0; i < diff; i++) {
+			 codiceString = "0" + codiceString;
+		}
+		return codiceString;
+	}
 }
