@@ -37,8 +37,15 @@ public class CiboScatola : Prodotto
     public CiboScatola(string marca, int pesoScatolaMax)
     {
         Marca = marca;
-        PesoScatolaMax = pesoScatolaMax;
-        pesoCorrente = pesoScatolaMax;
+        if (pesoScatolaMax > 300)
+        {
+            //throw errore
+        }
+        else
+        {
+            PesoScatolaMax = pesoScatolaMax;
+            pesoCorrente = pesoScatolaMax;
+        }
     }
 
     public string Marca { get; }
