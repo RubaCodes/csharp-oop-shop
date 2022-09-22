@@ -19,3 +19,20 @@
 //Console.WriteLine(primoProdotto.CodiceConZero());
 #endregion
 Console.WriteLine("Nuovo esercizio");
+
+BottigliaAcqua nuovaBottiglia = new BottigliaAcqua();
+
+Console.WriteLine(nuovaBottiglia.Codice);
+
+ public class BottigliaAcqua : Prodotto {
+
+}
+
+public class SacchettoFrutta : Prodotto {
+}
+
+public class Elettrodomestico : Prodotto {
+}
+
+public class CiboScatola : Prodotto {
+}

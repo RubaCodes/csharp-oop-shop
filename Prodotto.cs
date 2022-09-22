@@ -18,7 +18,7 @@
 //Console.WriteLine("---- Codice corretto con pad left di n zeri----");
 //Console.WriteLine(primoProdotto.CodiceConZero());
 #endregion
-public class Prodotto {
+public abstract class Prodotto {
 	//attributi
 	public int Codice { get; }
 	public string Nome { get; set; }
