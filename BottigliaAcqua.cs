@@ -21,12 +21,21 @@
 public class BottigliaAcqua : Prodotto {
     //costante conversione litri galloni
     private const double gallon = 3.785;
+    public float litriMax { get; }
     public float Litri { get; set; }
     public float Ph { get; set; }
     public string Sorgente { get;}
 
-    public BottigliaAcqua(string sorgente) {
+    public BottigliaAcqua(float litri, string sorgente)
+    {
+        if (litri > 1.5)
+        {
+            //throw errore
+        }
+        else { 
+        litriMax = litri;
         Sorgente = sorgente;
+        }
     }
     //metodi
     public void Bevi(float litriDaBere) {

@@ -20,30 +20,7 @@
 #endregion
 
 
-Console.WriteLine("Nuovo esercizio");
-//test bottiglia
-BottigliaAcqua nuovaBottiglia = new BottigliaAcqua("Carnia");
-//metodo statico
-double litriConvertiti = BottigliaAcqua.convertiInGalloni(2);
 
-Console.WriteLine(litriConvertiti);
-nuovaBottiglia.StampaProdotto();
-//test Sacchetto Frutta
-
-SacchettoFrutta sacchetto1 = new SacchettoFrutta(5,"Mela");
-sacchetto1.Nome = "Fruttini";
-sacchetto1.StampaProdotto();
-sacchetto1.MangiaPezzetto();
-sacchetto1.MangiaPezzetto();
-
-Console.WriteLine(sacchetto1.PezziRimanenti());
-
-CiboScatola scatola1 = new CiboScatola("Mulino Bianco", 500);
-scatola1.Nome = "Pan di Stelle";
-scatola1.StampaProdotto();
-
-scatola1.MangiaUnBoccone(100);
-Console.WriteLine(scatola1.CiboRimanente());
 
 //public class Elettrodomestico : Prodotto
 //{
@@ -53,10 +30,34 @@ Console.WriteLine(scatola1.CiboRimanente());
 //    }
 //}
 
-//public class CiboScatola : Prodotto
-//{
-//    public override void StampaProdotto()
-//    {
-//        throw new NotImplementedException();
-//    }
-//}
+public class CiboScatola : Prodotto
+{
+    public static int pesoCorrente;
+
+    public CiboScatola(string marca, int pesoScatolaMax)
+    {
+        Marca = marca;
+        PesoScatolaMax = pesoScatolaMax;
+        pesoCorrente = pesoScatolaMax;
+    }
+
+    public string Marca { get; }
+    public int PesoScatolaMax {get;}
+
+    public void MangiaUnBoccone(int grammi) {
+        if (pesoCorrente - grammi > 0)
+        {
+            pesoCorrente -= grammi;
+        }
+    }
+    public int CiboRimanente() {
+        return pesoCorrente;
+    }
+    public override void StampaProdotto()
+    {
+        Console.WriteLine("---- Informazioni Cibo in scatola ----");
+        Console.WriteLine("---- Codice Completo ----");
+        Console.WriteLine($"{Codice} - {Nome}");
+        Console.WriteLine($"Marca: {Marca} -  Peso Netto: {PesoScatolaMax}");
+    }
+}

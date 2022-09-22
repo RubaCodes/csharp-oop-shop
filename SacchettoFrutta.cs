@@ -20,29 +20,35 @@
 #endregion
 
 
-//test bottiglia
-//metodo statico
+
 
 public class SacchettoFrutta : Prodotto
 {
+    public static int pezziRimanenti;
+    public int DimensioneSacchettoMax { get; }
+    public string TipoFrutta { get; }
+
+    public SacchettoFrutta(  int dimensioneSacchettoMax, string tipoFrutta)
+    {
+        DimensioneSacchettoMax = dimensioneSacchettoMax;
+        pezziRimanenti = dimensioneSacchettoMax;
+        TipoFrutta = tipoFrutta;
+    }
+
+    public void MangiaPezzetto() {
+        if (pezziRimanenti > 0) {
+            pezziRimanenti--;
+        }
+    }
+    public int PezziRimanenti() {
+        return pezziRimanenti;
+    }
     public override void StampaProdotto()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("---- Informazioni Sacchetto Frutta ----");
+        Console.WriteLine("---- Codice Completo ----");
+        Console.WriteLine($"{Codice} - {Nome}");
+        Console.WriteLine("---- Tipo di Frutto e dimensione massima sacchetto ----");
+        Console.WriteLine($"{TipoFrutta} - {DimensioneSacchettoMax}");
     }
 }
-
-//public class Elettrodomestico : Prodotto
-//{
-//    public override void StampaProdotto()
-//    {
-//        throw new NotImplementedException();
-//    }
-//}
-
-//public class CiboScatola : Prodotto
-//{
-//    public override void StampaProdotto()
-//    {
-//        throw new NotImplementedException();
-//    }
-//}
