@@ -18,21 +18,29 @@
 //Console.WriteLine("---- Codice corretto con pad left di n zeri----");
 //Console.WriteLine(primoProdotto.CodiceConZero());
 #endregion
+
+
 Console.WriteLine("Nuovo esercizio");
+//test bottiglia
+BottigliaAcqua nuovaBottiglia = new BottigliaAcqua("Carnia");
+//metodo statico
+double litriConvertiti = BottigliaAcqua.convertiInGalloni(2);
 
-BottigliaAcqua nuovaBottiglia = new BottigliaAcqua();
+Console.WriteLine(litriConvertiti);
+nuovaBottiglia.StampaProdotto();
 
-Console.WriteLine(nuovaBottiglia.Codice);
+//public class Elettrodomestico : Prodotto
+//{
+//    public override void StampaProdotto()
+//    {
+//        throw new NotImplementedException();
+//    }
+//}
 
- public class BottigliaAcqua : Prodotto {
-
-}
-
-public class SacchettoFrutta : Prodotto {
-}
-
-public class Elettrodomestico : Prodotto {
-}
-
-public class CiboScatola : Prodotto {
-}
+//public class CiboScatola : Prodotto
+//{
+//    public override void StampaProdotto()
+//    {
+//        throw new NotImplementedException();
+//    }
+//}

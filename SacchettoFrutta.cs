@@ -18,40 +18,31 @@
 //Console.WriteLine("---- Codice corretto con pad left di n zeri----");
 //Console.WriteLine(primoProdotto.CodiceConZero());
 #endregion
-public abstract class Prodotto {
-	//attributi
-	public int Codice { get; }
-	public string Nome { get; set; }
-	public string Descrizione { get; set; }
-	public decimal Prezzo { get; set; }
-	public int Iva { get; set; }
 
-	//costruttori
-	//random codice prodotto
-	public Prodotto() {
-		Codice = new Random().Next(9999999);
-	}
-	public Prodotto(int codice) {
 
-		Codice = codice;
-	}
+//test bottiglia
+//metodo statico
 
-	//metodi
-	public decimal getPrezzoConIva() {
-		return Prezzo * (decimal) (Iva+100)/100;
-	}
-	public string GetNomeEsteso() {
-		return Codice + Nome;
-	}
-	public string CodiceConZero() {
-		string codiceString = Convert.ToString(Codice);
-		int diff = 8 - codiceString.Length;
-		for (int i = 0; i < diff; i++) {
-			 codiceString = "0" + codiceString;
-		}
-		return codiceString;
-	}
-	//metodi astratti
-	public abstract void StampaProdotto();
-
+public class SacchettoFrutta : Prodotto
+{
+    public override void StampaProdotto()
+    {
+        throw new NotImplementedException();
+    }
 }
+
+//public class Elettrodomestico : Prodotto
+//{
+//    public override void StampaProdotto()
+//    {
+//        throw new NotImplementedException();
+//    }
+//}
+
+//public class CiboScatola : Prodotto
+//{
+//    public override void StampaProdotto()
+//    {
+//        throw new NotImplementedException();
+//    }
+//}
