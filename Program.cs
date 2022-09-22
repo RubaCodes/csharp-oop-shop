@@ -22,7 +22,11 @@
 
 Console.WriteLine("Nuovo esercizio");
 //test bottiglia
-BottigliaAcqua nuovaBottiglia = new BottigliaAcqua("Carnia");
+BottigliaAcqua nuovaBottiglia = new BottigliaAcqua( 1.5f,"Carnia");
+BottigliaAcqua nuovaBottiglia2 = new BottigliaAcqua(1f, "San Benedetto");
+
+nuovaBottiglia.Nome = "Acqua Frizzante";
+nuovaBottiglia2.Nome = "Acqua Naturale";
 //metodo statico
 double litriConvertiti = BottigliaAcqua.convertiInGalloni(2);
 
@@ -31,12 +35,15 @@ nuovaBottiglia.StampaProdotto();
 //test Sacchetto Frutta
 
 SacchettoFrutta sacchetto1 = new SacchettoFrutta(5,"Mela");
+SacchettoFrutta sacchetto2 = new SacchettoFrutta(10, "Peso");
 sacchetto1.Nome = "Fruttini";
 sacchetto1.StampaProdotto();
 sacchetto1.MangiaPezzetto();
-sacchetto1.MangiaPezzetto();
+sacchetto2.MangiaPezzetto();
 
-Console.WriteLine(sacchetto1.PezziRimanenti());
+Console.WriteLine(sacchetto1.PezziRimanenti);
+Console.WriteLine(sacchetto2.PezziRimanenti);
+
 
 CiboScatola scatola1 = new CiboScatola("Mulino Bianco", 500);
 scatola1.Nome = "Pan di Stelle";
@@ -46,14 +53,6 @@ scatola1.MangiaUnBoccone(100);
 Console.WriteLine(scatola1.CiboRimanente());
 
 //public class Elettrodomestico : Prodotto
-//{
-//    public override void StampaProdotto()
-//    {
-//        throw new NotImplementedException();
-//    }
-//}
-
-//public class CiboScatola : Prodotto
 //{
 //    public override void StampaProdotto()
 //    {

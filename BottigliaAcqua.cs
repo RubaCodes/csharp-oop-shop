@@ -1,23 +1,4 @@
-﻿#region vecchio esercizio
-//Prodotto primoProdotto = new Prodotto();
-
-//primoProdotto.SetNome("smartphone");
-//primoProdotto.SetDescrizione("L'ultimo incredile smartphone");
-//primoProdotto.SetPrezzo(399);
-//primoProdotto.SetIva(20);
-
-//Console.WriteLine("---- Il tuo Prodotto----");
-//Console.WriteLine(primoProdotto.GetCodice());
-//Console.WriteLine(primoProdotto.GetNome());
-//Console.WriteLine(primoProdotto.GetDescrizione());
-//Console.WriteLine(primoProdotto.GetPrezzo());
-//Console.WriteLine(primoProdotto.getPrezzoConIva());
-//Console.WriteLine("---- Il Nome Prodotto esteso----");
-//Console.WriteLine(primoProdotto.GetNomeEsteso());
-////codice corretto con gli zeri
-//Console.WriteLine("---- Codice corretto con pad left di n zeri----");
-//Console.WriteLine(primoProdotto.CodiceConZero());
-#endregion
+﻿
 public class BottigliaAcqua : Prodotto {
     //costante conversione litri galloni
     private const double gallon = 3.785;
@@ -34,6 +15,7 @@ public class BottigliaAcqua : Prodotto {
         }
         else { 
         litriMax = litri;
+        Litri = litri;
         Sorgente = sorgente;
         }
     }
@@ -59,10 +41,10 @@ public class BottigliaAcqua : Prodotto {
     }
     public override void StampaProdotto() {
         //stampa del prodotto
-        Console.WriteLine("---- Informazioni Bottiglia Acqua ----");
+        Console.WriteLine('\n'+"---- Informazioni Bottiglia Acqua ----");
         Console.WriteLine("---- Codice Completo ----");
         Console.WriteLine($"{Codice} - {Nome}");
-        Console.WriteLine($"Sorgente: {Sorgente} -  PH : {Ph} -  Litri contenuti : {Litri}");
+        Console.WriteLine($"Sorgente: {Sorgente} -  PH : {Ph} -  Litri contenuti : {Litri}"+'\n');
 
     }
 }
