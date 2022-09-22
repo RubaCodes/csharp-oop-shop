@@ -50,12 +50,17 @@ scatola1.Nome = "Pan di Stelle";
 scatola1.StampaProdotto();
 
 scatola1.MangiaUnBoccone(100);
-Console.WriteLine(scatola1.CiboRimanente());
+Console.WriteLine(scatola1.PesoCorrente);
 
-//public class Elettrodomestico : Prodotto
-//{
-//    public override void StampaProdotto()
-//    {
-//        throw new NotImplementedException();
-//    }
-//}
+Elettrodomestico lavatrice = new Elettrodomestico("Samsung", "A++");
+
+lavatrice.Nome = "Lavatrice";
+
+lavatrice.Accensione();
+if (lavatrice.Status)
+{
+    Console.WriteLine("La lavatrice e' accesa");
+}
+else {
+    Console.WriteLine("La lavatrice e' spenta");
+}

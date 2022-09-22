@@ -1,6 +1,6 @@
 ﻿public class CiboScatola : Prodotto
 {
-    public static int pesoCorrente;
+    public  int PesoCorrente;
     private const double Oz = 0.0353;
 
     public CiboScatola(string marca, int pesoScatolaMax)
@@ -13,7 +13,7 @@
         else
         {
             PesoScatolaMax = pesoScatolaMax;
-            pesoCorrente = pesoScatolaMax;
+            PesoCorrente = pesoScatolaMax;
         }
     }
 
@@ -21,13 +21,10 @@
     public int PesoScatolaMax { get; }
 
     public void MangiaUnBoccone(int grammi) {
-        if (pesoCorrente - grammi > 0)
+        if (PesoCorrente - grammi > 0)
         {
-            pesoCorrente -= grammi;
+            PesoCorrente -= grammi;
         }
-    }
-    public int CiboRimanente() {
-        return pesoCorrente;
     }
     //grammi to once
     public static double GramsToOz(int grams) {

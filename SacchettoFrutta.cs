@@ -16,7 +16,7 @@ public class SacchettoFrutta : Prodotto
         if (PezziRimanenti > 0)
         {
             PezziRimanenti = PezziRimanenti - 1;
-    }
+        }
 }
     public override void StampaProdotto()
     {

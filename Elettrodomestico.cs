@@ -5,6 +5,10 @@
 
     public string Categoria { get; set; }
     public bool Status { get; set; } = false;
+    public Elettrodomestico(string marca, string classeEnergetica) {
+        Marca = marca;
+        ClasseEnergetica = classeEnergetica;
+    }
 
     // metodi di accensione/ spegnimento
     public void Accensione() {
